@@ -15,8 +15,8 @@ const App: React.FC = () => {
   return (
     <>
    <MainLayout>
-    <CardTorneos/>
-    <SelectCategoria />
+    {/* <CardTorneos/>
+    <SelectCategoria /> */}
     <ListaEquipos />
    <TablaPosiciones />
    <CardPartido />

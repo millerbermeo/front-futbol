@@ -46,15 +46,14 @@ export function Sidebar() {
     const [open, setOpen] = useState(true);
 
     return (
-        <div className={`relative ${open ? 'w-72' : 'w-16'} transition-all duration-500 ease-in-out`}>
-
+        <div className={`relative bg-[#1e1e1e] dark:bg-neutral-900 ${open ? 'w-80' : 'w-16'} transition-all duration-500 ease-in-out`}>
 
             <div className="flex h-screen dark:bg-neutral-800 rounded-md fixed">
 
-                <div className={`flex flex-col bg-[#000] dark:bg-neutral-900 ${open ? 'w-72' : 'w-16'} transition-all duration-500 ease-in-out`}>
+                <div className={`flex flex-col  ${open ? 'w-80' : 'w-16'} transition-all duration-500 ease-in-out`}>
                     {/* Logo */}
                     <div className="flex items-center h-16 justify-between p-4 relative z-50">
-                        <div className="flex w-[90%] items-center justify-between z-40">
+                        <div className="flex w-[85%] items-center justify-between z-40">
                             {open && (
                                 <span className="text-[#fff] font-semibold text-3xl">Liga</span>
                             )}
@@ -69,12 +68,12 @@ export function Sidebar() {
                     </div>
 
                     {/* Links */}
-                    <div className="mt-8 flex flex-col gap-4 z-20">
+                    <div className="mt-2 ml-2 flex flex-col z-20">
                         {links.map((link, idx) => (
                             <Link
                                 key={idx}
                                 to={link.href}
-                                className="flex items-center p-4 hover:bg-[#008B37] dark:hover:bg-neutral-700 rounded-md transition duration-300"
+                                className="flex items-center h-14 p-4 hover:bg-[#008B37] dark:hover:bg-neutral-700 rounded-md transition duration-300"
                             >
                                 {link.icon}
                                 {open && <span className="ml-4 text-white">{link.label}</span>}
@@ -92,20 +91,12 @@ export function Sidebar() {
                         {open && <span className="text-white">Dev Miller</span>}
                     </div>
                 </div>
-                <div className="z-10 absolute h-48 w-48">
+
+                <div className="z-10 absolute bottom-0 h-20 w-48">
 
 
                     <div
-                        className="absolute bottom-10 -left-10 h-48 w-48 rounded-full bg-sky-700 opacity-50 mix-blend-multiply blur-3xl"
-                    >
-                    </div>
-                </div>
-
-                <div className="z-10 absolute bottom-0 h-48 w-48">
-
-
-                    <div
-                        className="absolute bottom-0 -right-20 h-48 w-48 rounded-full bg-sky-700 opacity-50 mix-blend-multiply blur-3xl"
+                        className="absolute bottom-0 -left-20 h-20 w-48 rounded-full bg-green-500 opacity-30 mix-blend-multiply blur-3xl"
                     >
                     </div>
                 </div>

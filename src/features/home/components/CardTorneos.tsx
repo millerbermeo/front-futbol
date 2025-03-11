@@ -35,7 +35,7 @@ export const CardTorneos: React.FC = () => {
         <>
             <div className="flex flex-wrap gap-5">
                 {torneos.map((torneo, index) => (
-                    <Card key={index} isFooterBlurred className="w-96 h-[200px] col-span-12 sm:col-span-5 relative">
+                    <Card key={index} isFooterBlurred className="w-80 h-[200px] col-span-12 sm:col-span-5 relative ">
                         <CardHeader className="absolute z-10 top-1 flex-col items-start">
                             <p className="text-tiny text-white/60 uppercase font-bold">Torneo</p>
                             <h4 className="text-white font-medium text-2xl bg-blue-950 rounded-full  px-2">{torneo.nombre}</h4>
@@ -46,10 +46,10 @@ export const CardTorneos: React.FC = () => {
                             className="z-0 w-full h-full scale-125 -translate-y-6 object-cover"
                             src={torneo.logo}
                         />
-                        <CardFooter className="absolute dark bg-black bottom-0 border-t-1 border-zinc-100/50 z-10 justify-between p-4">
+                        <CardFooter className="absolute bg-white/70 bottom-0 border-t-1 border-zinc-100/50 z-10 justify-between p-4">
                             <div>
-                                <p className="text-white text-tiny">{torneo.fecha}</p>
-                                <p className="text-white text-tiny">{torneo.descripcion}</p>
+                                <p className="text-black text-tiny">{torneo.descripcion}</p>
+                                <p className="text-black text-tiny">{torneo.fecha}</p>
                             </div>
                             <Button className="text-tiny" color="primary" radius="full" size="sm">
                                 Ver más

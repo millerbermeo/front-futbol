@@ -47,15 +47,15 @@ const Navbar = () => {
     ];
 
     return (
-        <Nav className="w-full bg-transparent py-2 text-white border-b z-10 border-gray-100" onMenuOpenChange={setIsMenuOpen}>
+        <Nav className="w-full bg-[#2b2b2b] py-0.5  text-white border-b z-10 border-white" onMenuOpenChange={setIsMenuOpen}>
             <NavbarContent>
                 <NavbarMenuToggle
                     aria-label={isMenuOpen ? "Close menu" : "Open menu"}
                     className="sm:hidden"
                 />
-                <NavbarBrand>
-                    <AcmeLogo />
-                    <p className="font-bold text-inherit">Liga Control</p>
+                <NavbarBrand className="text-2xl">
+                    <span className="text-[#fff]"><AcmeLogo /></span>
+                    <p className="font-bold text-[#00a650]">Liga Control</p>
                 </NavbarBrand>
             </NavbarContent>
 

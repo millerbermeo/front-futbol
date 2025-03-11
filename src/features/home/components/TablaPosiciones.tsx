@@ -54,7 +54,7 @@ const TablaPosiciones = () => {
     <Table aria-label="Tabla de Posiciones" className="dark text-foreground">
       <TableHeader columns={columnas}>
         {(columna) => (
-          <TableColumn className="bg-black text-white" key={columna.uid}>{columna.name}</TableColumn>
+          <TableColumn className="bg-gray-200 text-black" key={columna.uid}>{columna.name}</TableColumn>
         )}
       </TableHeader>
       <TableBody items={datos}>
