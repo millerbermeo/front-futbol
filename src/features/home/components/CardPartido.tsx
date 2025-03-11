@@ -1,60 +1,138 @@
 import React from "react";
-import {Card, CardHeader, CardBody, CardFooter} from "@heroui/card";
-import {Button} from "@heroui/button";
-import {Avatar} from "@heroui/avatar";
+import { Card, CardHeader, CardBody, CardFooter } from "@heroui/card";
+import { Button } from "@heroui/button";
+import { Avatar } from "@heroui/avatar";
 
+interface Partido {
+  id: number;
+  equipoA: string;
+  equipoB: string;
+  logoA: string;
+  logoB: string;
+  fecha: string;
+  hora: string;
+  estadio: string;
+}
 
+const partidos: Partido[] = [
+  {
+    id: 1,
+    equipoA: "Real Madrid",
+    equipoB: "Barcelona",
+    logoA: "https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/1.png",
+    logoB: "https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/2.png",
+    fecha: "10 de marzo de 2025",
+    hora: "19:00",
+    estadio: "Santiago Bernabéu",
+  },
+  {
+    id: 2,
+    equipoA: "Manchester United",
+    equipoB: "Liverpool",
+    logoA: "https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/3.png",
+    logoB: "https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/4.png",
+    fecha: "15 de marzo de 2025",
+    hora: "20:30",
+    estadio: "Old Trafford",
+  },
+  {
+    id: 3,
+    equipoA: "Juventus",
+    equipoB: "Milan",
+    logoA: "https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/5.png",
+    logoB: "https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/6.png",
+    fecha: "20 de marzo de 2025",
+    hora: "18:45",
+    estadio: "Allianz Stadium",
+  },
+  {
+    id: 4,
+    equipoA: "PSG",
+    equipoB: "Bayern Múnich",
+    logoA: "https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/7.png",
+    logoB: "https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/8.png",
+    fecha: "25 de marzo de 2025",
+    hora: "21:00",
+    estadio: "Parque de los Príncipes",
+  },
+  {
+    id: 5,
+    equipoA: "Real Madrid",
+    equipoB: "Barcelona",
+    logoA: "https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/1.png",
+    logoB: "https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/2.png",
+    fecha: "10 de marzo de 2025",
+    hora: "19:00",
+    estadio: "Santiago Bernabéu",
+  },
+  {
+    id: 6,
+    equipoA: "Manchester United",
+    equipoB: "Liverpool",
+    logoA: "https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/3.png",
+    logoB: "https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/4.png",
+    fecha: "15 de marzo de 2025",
+    hora: "20:30",
+    estadio: "Old Trafford",
+  },
+  {
+    id: 7,
+    equipoA: "Juventus",
+    equipoB: "Milan",
+    logoA: "https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/5.png",
+    logoB: "https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/6.png",
+    fecha: "20 de marzo de 2025",
+    hora: "18:45",
+    estadio: "Allianz Stadium",
+  },
+  {
+    id: 8,
+    equipoA: "PSG",
+    equipoB: "Bayern Múnich",
+    logoA: "https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/7.png",
+    logoB: "https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/8.png",
+    fecha: "25 de marzo de 2025",
+    hora: "21:00",
+    estadio: "Parque de los Príncipes",
+  },
+  
+];
 
-const CardPartido = () => {
-  const [isFollowed, setIsFollowed] = React.useState(false);
-
+const CardPartido: React.FC<{ partido: Partido }> = ({ partido }) => {
   return (
-    <Card className="max-w-[340px]">
-      <CardHeader className="justify-between">
-        <div className="flex gap-5">
-          <Avatar
-            isBordered
-            radius="full"
-            size="md"
-            src="https://heroui.com/avatars/avatar-1.png"
-          />
-          <div className="flex flex-col gap-1 items-start justify-center">
-            <h4 className="text-small font-semibold leading-none text-default-600">Zoey Lang</h4>
-            <h5 className="text-small tracking-tight text-default-400">@zoeylang</h5>
-          </div>
+    <Card className="max-w-[400px] text-center">
+      <CardHeader className="flex justify-between items-center">
+        <div className="flex flex-col items-center">
+          <Avatar isBordered radius="full" size="lg" src={partido.logoA} />
+          <h4 className="text-medium font-semibold">{partido.equipoA}</h4>
         </div>
-        <Button
-          className={isFollowed ? "bg-transparent text-foreground border-default-200" : ""}
-          color="primary"
-          radius="full"
-          size="sm"
-          variant={isFollowed ? "bordered" : "solid"}
-          onPress={() => setIsFollowed(!isFollowed)}
-        >
-          {isFollowed ? "Unfollow" : "Follow"}
-        </Button>
+        <span className="text-xl font-bold">VS</span>
+        <div className="flex flex-col items-center">
+          <Avatar isBordered radius="full" size="lg" src={partido.logoB} />
+          <h4 className="text-medium font-semibold">{partido.equipoB}</h4>
+        </div>
       </CardHeader>
-      <CardBody className="px-3 py-0 text-small text-default-400">
-        <p>Frontend developer and UI/UX enthusiast. Join me on this coding adventure!</p>
-        <span className="pt-2">
-          #FrontendWithZoey
-          <span aria-label="computer" className="py-2" role="img">
-            💻
-          </span>
-        </span>
+      <CardBody className="px-3 py-2">
+        <p className="text-default-600 text-sm">Fecha: {partido.fecha}</p>
+        <p className="text-default-600 text-sm">Hora: {partido.hora}</p>
+        <p className="text-default-600 text-sm">Estadio: {partido.estadio}</p>
       </CardBody>
-      <CardFooter className="gap-3">
-        <div className="flex gap-1">
-          <p className="font-semibold text-default-400 text-small">4</p>
-          <p className=" text-default-400 text-small">Following</p>
-        </div>
-        <div className="flex gap-1">
-          <p className="font-semibold text-default-400 text-small">97.1K</p>
-          <p className="text-default-400 text-small">Followers</p>
-        </div>
+      <CardFooter className="flex justify-center gap-4">
+        <Button color="primary" size="sm">Ver Detalles</Button>
+        <Button color="secondary" size="sm">Comprar Boletos</Button>
       </CardFooter>
     </Card>
   );
-}
+};
 
-export default CardPartido
+const ListaPartidos: React.FC = () => {
+  return (
+    <div className="flex flex-wrap justify-start gap-4 my-10">
+      {partidos.map((partido) => (
+        <CardPartido key={partido.id} partido={partido} />
+      ))}
+    </div>
+  );
+};
+
+export default ListaPartidos;

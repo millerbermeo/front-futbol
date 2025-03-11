@@ -49,15 +49,17 @@ const TablaPosiciones = () => {
   };
 
   return (
-    <Table aria-label="Tabla de Posiciones">
+   <>
+   
+    <Table aria-label="Tabla de Posiciones" className="dark text-foreground">
       <TableHeader columns={columnas}>
         {(columna) => (
-          <TableColumn key={columna.uid}>{columna.name}</TableColumn>
+          <TableColumn className="bg-black text-white" key={columna.uid}>{columna.name}</TableColumn>
         )}
       </TableHeader>
       <TableBody items={datos}>
         {(item) => (
-          <TableRow key={item.posicion}>
+          <TableRow key={item.posicion} className="bg-transparent">
             {(columnaClave) => (
               <TableCell>{renderizarCelda(item, columnaClave)}</TableCell>
             )}
@@ -65,6 +67,7 @@ const TablaPosiciones = () => {
         )}
       </TableBody>
     </Table>
+   </>
   );
 };
 

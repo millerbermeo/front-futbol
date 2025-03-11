@@ -47,7 +47,7 @@ const Navbar = () => {
     ];
 
     return (
-        <Nav className="bg-[#0575E6] py-2 bg-gradient-to-r from-[#021c795b] to-[#0576e657] text-white" onMenuOpenChange={setIsMenuOpen}>
+        <Nav className="w-full bg-transparent py-2 text-white border-b z-10 border-gray-100" onMenuOpenChange={setIsMenuOpen}>
             <NavbarContent>
                 <NavbarMenuToggle
                     aria-label={isMenuOpen ? "Close menu" : "Open menu"}
@@ -55,11 +55,11 @@ const Navbar = () => {
                 />
                 <NavbarBrand>
                     <AcmeLogo />
-                    <p className="font-bold text-inherit">ACME</p>
+                    <p className="font-bold text-inherit">Liga Control</p>
                 </NavbarBrand>
             </NavbarContent>
 
-            <NavbarContent className="sm:flex gap-4" justify="center">
+            <NavbarContent className="hidden sm:flex gap-4" justify="center">
                 <NavbarItem>
                     <Link className="text-white" color="foreground" href="#">
                         Partidos
